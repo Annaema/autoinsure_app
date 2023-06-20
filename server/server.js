@@ -5,6 +5,7 @@ const express = require('express'),
 	backend = express()
 const mysql = require('mysql')
 const cors = require('cors')
+require("dotenv").config()
 backend.use(cors())
 backend.use(express.json())
 
@@ -48,4 +49,4 @@ backend.get('/result', (req, res) => {
     })
 })
 
-backend.listen(3001, () => console.log("Your Backend server works!"))
+backend.listen(process.env.PORT || 3001, () => console.log("Your Backend server works!"))
